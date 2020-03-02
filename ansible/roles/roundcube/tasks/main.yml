@@ -113,7 +113,7 @@
   register: roundcube__register_updatedb
   changed_when: roundcube__register_updatedb.stdout|d()
   when: (roundcube__register_version.stdout|d() and
-         roundcube__git_version is version_compare(roundcube__register_version.stdout, '>'))
+         roundcube__git_version is version(roundcube__register_version.stdout, '>'))
   tags: [ 'role::roundcube:database' ]
 
 - name: Post hooks
